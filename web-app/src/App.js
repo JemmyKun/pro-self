@@ -1,11 +1,13 @@
 import React from 'react';
-import ClassList from "./pages/classlist/ClassList";
 import './app.scss';
+import Head from "./components/head/head";
+import Main from "./pages/main";
 
 function App() {
     return (
         <div className="app-container">
-            <ClassList/>
+            <Head/>
+            <Main />
         </div>
     );
 }

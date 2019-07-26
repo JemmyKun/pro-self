@@ -1,6 +1,6 @@
 import React from "react";
 import Apis from "../../api/classList";
-import {Button} from "antd";
+import Banner from "../../components/banner/banner";
 
 class ClassList extends React.Component {
     componentDidMount() {
@@ -12,8 +12,7 @@ class ClassList extends React.Component {
     render() {
         return (
             <div className={"list-table"}>
-                hello world!
-                <Button type={"primary"}>click!</Button>
+                <Banner/>
             </div>
         )
     }
