@@ -1,0 +1,38 @@
+.app-header{
+  height:60px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  background:#1890ff;
+  font-size:16px;
+  padding:0 20px;
+  .header-left{
+    height:100%;
+    display:flex;
+    align-items: center;
+  }
+  .logo{
+    width:200px;
+    font-size:18px;
+    color:#fff;
+  }
+  .menu-list{
+    display:flex;
+    height:100%;
+    li{
+      height:60px;
+      line-height:60px;
+      padding:0 15px;
+    }
+    a{
+      color:#fff;
+      text-decoration:none;
+      &:hover{
+        color:red;
+      }
+      &.active{
+        color:red;
+      }
+    }
+  }
+}
