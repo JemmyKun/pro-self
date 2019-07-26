@@ -1,0 +1,10 @@
+@import './asset/reset.css';
+
+body, html, #root {
+  height: 100%;
+}
+
+.app-container {
+  height: 100%;
+  display: flex;
+}
