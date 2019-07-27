@@ -5,7 +5,7 @@ import './head.scss';
 const menu = [
     {
         name: "知识库",
-        path: "/main/know"
+        path: "/main/home"
     },
     {
         name: "热词",
