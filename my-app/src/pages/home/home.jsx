@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Apis from "../../api/home";
+import "./home.scss";
 
 class Home extends Component {
     componentDidMount() {
@@ -14,7 +15,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
+            <div className={"home-page"}>
                 home-page
             </div>
         )

@@ -6,6 +6,51 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script>
+        window.onload = function () {
+            /*720代表设计师给的设计稿的宽度，你的设计稿是多少，就写多少;100代表换算比例，这里写100是
+              为了以后好算,比如，你测量的一个宽度是100px,就可以写为1rem,以及1px=0.01rem等等*/
+            // getRem(720, 10)
+        };
+        window.onresize = function () {
+            // getRem(720, 10)
+        };
+
+        function getRem(pwidth, prem) {
+            var html = document.getElementsByTagName("html")[0];
+            var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
+            html.style.fontSize = oWidth / pwidth * prem + "px";
+        }
+
+        var ua = window.navigator.userAgent;
+        var iphoneplus = ua.indexOf('Device iPhone7,1') >= 0 ? true : false;
+
+        if (iphoneplus) {
+            //iPhone 6 plus处理样式
+            if (window.screen.width > 400) {
+                document.documentElement.style.fontSize = '117.1875px';
+            } else {
+                document.documentElement.style.fontSize = '107px';
+            }
+        } else {
+            //适配所有机型
+            (function (doc, win) {
+                var designWidth = 720;   // 设计稿的宽度
+                var scale = 100;  // px-rem  换算的比率
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = scale * (clientWidth / designWidth) + 'px';
+                    };
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+        }
+
+    </script>
 </head>
 <body>
 <div id="root"></div>
